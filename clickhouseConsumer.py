@@ -20,7 +20,7 @@ And that's exactly what we want here.
 
 enable_auto_commit = True:makes sure the consumer commits its read offset every interval.
 
-auto_commit interval_ms = 1000ms:sets the interval between two commits.
+auto_commit_interval_ms = 1000ms:sets the interval between two commits.
 Since messages are coming in every five second,committing every second seems fair.
 
 group_id = 'counters':this is the consumer group to which the consumer belongs.
