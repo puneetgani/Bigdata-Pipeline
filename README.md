@@ -3,7 +3,7 @@
 
 This project provides an insight about how one can go about creating a bigdata pipeline. 
 In this project I have emulated a microservice using a python script which sends post request 
-to a Producer Api, the messages are then written to a data streaming platfrom called kafka and later the 
+to a Producer Api, the messages are then written to a data streaming platform called kafka and later the
 consumer Api writes the messages to a clickhouse database.
 
 
@@ -23,7 +23,7 @@ consumer Api writes the messages to a clickhouse database.
 
 ## Producer Application
 
-The Producer Api sends all the json data sent in a post request to a perticular topic in a kafka broker.
+The Producer Api sends all the json data sent in a post request to a particular topic in a kafka broker.
 
 Read the documentation of all the modules used in this program to understand the code written here in an efficient way.
 
@@ -94,9 +94,9 @@ if __name__ == '__main__':
 
 
 
-## Cosumer Application
+## Consumer Application
 
-The Consumer Api sends all the json data sent to a perticular topic in a kafka broker to the clickhouse database .
+The Consumer Api sends all the json data sent to a particular topic in a kafka broker to the clickhouse database .
 
 Read the documentation of all the modules used in this program to understand the code written here in an efficient way.
 
