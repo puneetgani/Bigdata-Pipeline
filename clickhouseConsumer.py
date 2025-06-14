@@ -6,7 +6,9 @@ consumer = KafkaConsumer(
     "puneet",
     bootstrap_servers=["localhost:9092"],
     auto_offset_reset="latest",
-    enable_auto_commit=True)
+    enable_auto_commit=True,
+    value_deserializer=lambda m: json.loads(m.decode("utf-8")),
+)
 """
 The first argument is the topic,"puneet" in our case.
 
@@ -33,12 +35,12 @@ value serializer was doing.
 client = Client(host='localhost')
 
 for message in consumer:
-    a = str(message.value)
-    b = (a[2:(len(a)-1)])
-    c = (json.loads(b))
-    name = c['name']
-    address = c['address']
-    created_at = c['created_at']
-    client.execute(f"INSERT INTO myUsers (name, address, created_at) values('{name}','{address}','{created_at}')")
+    data = message.value
+    name = data['name']
+    address = data['address']
+    created_at = data['created_at']
+    client.execute(
+        f"INSERT INTO myUsers (name, address, created_at) values('{name}','{address}','{created_at}')"
+    )
 
 
